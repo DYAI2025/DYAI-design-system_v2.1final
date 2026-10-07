@@ -1,0 +1,36 @@
+/* DYAI Studio — generated from tokens.json */
+:root, [data-theme="light"] {
+  --paper: #f5f4ef;
+  --paper-2: #ecebe5;
+  --paper-3: #e4e3dc;
+  --ink: #171a19;
+  --ink-2: #3a3f3c;
+  --muted: #5a605c;
+  --quiet: #6c726e;
+  --rule: #d3d4cd;
+  --rule-strong: #b6b8b0;
+  --graphite: #171a19;
+  --graphite-2: #1e2220;
+  --rule-dark: #3a403d;
+  --light: #f2f2ec;
+  --light-2: #c6cac5;
+  --light-muted: #9ca29d;
+  --signal: #2459e8;
+  --signal-ink: #1d4dd1;
+  --signal-soft: #dde5fb;
+  --signal-tint: rgba(36, 89, 232, 0.08);
+  --warn-ink: #8a4a2a;
+}
+:root {
+  --text-body: 17px;
+  --text-small: 15px;
+  --text-meta: 12px;
+  --text-meta-sm: 11px;
+  --shell: 1376px;
+  --gutter: clamp(20px, 4vw, 56px);
+  --header-h: 72px;
+  --header-h-compact: 56px;
+  --ease-out: cubic-bezier(.2, .65, .25, 1);
+  --font-sans: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+}

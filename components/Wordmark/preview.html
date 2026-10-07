@@ -1,0 +1,21 @@
+<!-- @dsCard group="Brand" height=158 subtitle="Brand mark + DYAI, header and footer variants" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Wordmark — preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+  body { min-width: 0; }
+  body::before { display: none; }
+  .pv { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; padding: 24px; }
+  .pv--dark { background: var(--graphite); }
+  .pv--col { flex-direction: column; align-items: flex-start; gap: 14px; }
+  
+</style>
+</head>
+<body>
+<div class="pv"><a class="wordmark" href="#" aria-label="DYAI Studio — home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>DYAI</span><small>STUDIO</small></a><a class="footer-brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>DYAI</span><small>STUDIO</small></a></div>
+<div class="pv dark-section pv--dark"><a class="wordmark" href="#" style="color: var(--light)"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>DYAI</span><small>STUDIO</small></a></div>
+</body>
+</html>

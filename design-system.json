@@ -1,0 +1,25 @@
+{
+  "v": 3,
+  "assetGroups": {},
+  "blobs": {},
+  "createdOnFiles": {
+    "at": "2026-10-07T01:04:13Z",
+    "v": 1
+  },
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "groups": [],
+  "lastChange": {
+    "at": "2026-10-07T01:04:13Z",
+    "by": "Ben Poersch",
+    "note": "Created from the dyai-p3 repository: 20 colours, 13 type styles, layout/size/easing tokens, 9 static component previews, cover.",
+    "via": "Claude Code · upload dyai-studio-blue.zip (dyai-p3 3.1.0)"
+  },
+  "layout": "files",
+  "libraries": [],
+  "namespace": "DYAI",
+  "sections": {},
+  "title": "DYAI Studio"
+}

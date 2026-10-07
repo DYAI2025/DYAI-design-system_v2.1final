@@ -1,0 +1,54 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>DYAI Studio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+  html, body { margin: 0; height: 100%; }
+  body { min-width: 0; background: var(--paper); color: var(--ink); font-family: var(--font-sans); overflow: hidden; }
+  body::before { display: none; }
+  .cover { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--paper); }
+  .art { position: absolute; top: 0; left: 480px; width: 480px; height: 288px; overflow: hidden; }
+  .art svg { display: block; width: 480px; height: 288px; }
+  .deep { fill: var(--graphite); }
+  .brand { fill: var(--signal); }
+  .tint { fill: var(--signal-soft); }
+  .relief { fill: var(--paper-3); }
+  .base { stroke: var(--rule-strong); stroke-width: 1.2; fill: none; }
+  .gap { stroke: var(--rule-strong); stroke-width: 1.4; stroke-dasharray: 3 7; fill: none; }
+  .active { stroke: var(--signal); stroke-width: 2; stroke-linecap: round; fill: none; }
+  .junction { fill: var(--signal); }
+  .words { position: absolute; left: 48px; bottom: 32px; max-width: 440px; }
+  .name { margin: 0; font-size: 104px; line-height: .95; font-weight: 650; letter-spacing: -.06em; color: var(--ink); }
+  .tag { margin: 12px 0 0 4px; font-size: 14px; line-height: 20px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="cover">
+<div class="art" aria-hidden="true">
+<svg viewBox="0 0 480 288" width="480" height="288">
+<!--
+  blocks      graphite 144×224 slab bled off the top (the dark sections) · signal 176×160 bled off the right edge (the one cobalt) · signal-soft 112×112 (its tint on graphite) · paper-3 112×56 (the recessed surface) — ≈29% of 960×288, all square
+  arrangement a tall graphite slab with satellites, every bottom on one line at y=216, like chapters resting on a shared rule
+  pattern     the hero's connection being established, from "cobalt is semantic only: a connection being established": the left pole drawn active in signal (2px), an 8×8 signal junction, the unresolved gap dashed 3 7 in rule-strong, the far pole a rule-strong base hairline — 3 strokes
+  scales      block sides in header-h-compact (56) and header-h (72) multiples (112, 144, 224); square corners because the source sets border-radius 0; strokes 1.2 / 1.4 / 2 as in hero.css
+-->
+<rect class="deep" x="24" y="-8" width="144" height="224"/>
+<rect class="relief" x="184" y="40" width="112" height="56"/>
+<rect class="tint" x="184" y="104" width="112" height="112"/>
+<rect class="brand" x="312" y="56" width="176" height="160"/>
+<line class="active" x1="24" y1="252" x2="236" y2="252"/>
+<line class="gap" x1="244" y1="252" x2="392" y2="252"/>
+<line class="base" x1="392" y1="252" x2="456" y2="252"/>
+<rect class="junction" x="236" y="248" width="8" height="8"/>
+</svg>
+</div>
+<div class="words">
+<h1 class="name">DYAI<br>Studio</h1>
+<p class="tag">Turn AI capability into human capability.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- @dsCard group="Actions" height=164 subtitle="Quiet inline action" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TextButton — preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+  body { min-width: 0; }
+  body::before { display: none; }
+  .pv { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; padding: 24px; }
+  .pv--dark { background: var(--graphite); }
+  .pv--col { flex-direction: column; align-items: flex-start; gap: 14px; }
+  
+</style>
+</head>
+<body>
+<div class="pv"><button class="text-button" type="button">Reset the map</button><button class="text-button" type="button">Remove capability</button></div>
+<div class="pv dark-section pv--dark"><button class="text-button text-button--light" type="button">Replay the sequence</button></div>
+</body>
+</html>

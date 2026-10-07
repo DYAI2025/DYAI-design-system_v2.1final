@@ -1,0 +1,21 @@
+<!-- @dsCard group="Indicators" height=132 subtitle="Square signals, line, scenario and status dots" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Signals — preview</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap">
+<style>
+  body { min-width: 0; }
+  body::before { display: none; }
+  .pv { display: flex; flex-wrap: wrap; align-items: center; gap: 28px; padding: 24px; }
+  .pv--dark { background: var(--graphite); }
+  .pv--col { flex-direction: column; align-items: flex-start; gap: 14px; }
+  
+</style>
+</head>
+<body>
+<div class="pv"><span class="meta" style="display:inline-flex;align-items:center;gap:10px"><span class="mini-signal"></span>Gap · unresolved</span><span class="meta" style="display:inline-flex;align-items:center;gap:10px"><span class="mini-signal mini-signal--on"></span>Augmentation layer</span><span class="signal-line"></span><span style="display:inline-flex;gap:10px"><span class="scenario-dot"></span><span aria-pressed="true" style="display:inline-flex"><span class="scenario-dot"></span></span></span><span class="status-dot"></span></div>
+<div class="pv dark-section pv--dark"><span class="meta" style="display:inline-flex;align-items:center;gap:10px;color:var(--light-2)"><span class="mini-signal"></span>Unresolved</span><span class="meta" style="display:inline-flex;align-items:center;gap:10px"><span class="mini-signal mini-signal--on"></span>Established</span><span class="signal-line"></span></div>
+</body>
+</html>
