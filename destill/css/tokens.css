@@ -1,0 +1,96 @@
+/* ============================================================
+   DESTILL — SCULPTED LIGHT · material tokens
+   One diffuse light source, upper-left. Every raised surface
+   crests at the upper-left and seats its contact shadow to the
+   lower-right; every recess shades its upper-left inner wall and
+   lightens the lower-right inner wall.
+   ============================================================ */
+
+:root {
+  color-scheme: light;
+
+  /* ---- colour foundation ---- */
+  --pearl:        #EEF1F6;  /* page ground, flat supporting plane        */
+  --porcelain:    #F8FAFC;  /* highlight porcelain (crests, rims)         */
+  --raised:       #F2F5F9;  /* main raised surface                        */
+  --recessed:     #E8EDF3;  /* recessed surface                           */
+  --recessed-2:   #E2E8F0;  /* deepest recess (tracks, wells at rest)     */
+
+  --ink:          #151922;  /* primary ink                                */
+  --ink-2:        #4D5566;  /* secondary ink                              */
+  --ink-3:        #5B6478;  /* muted ink — 4.68:1 on --raised, 4.53:1 pearl */
+  --ink-faint:    #7A8398;  /* decorative only, never text < 14px         */
+
+  --accent:       #3559CB;  /* muted cobalt                               */
+  --accent-ink:   #2A47A8;  /* cobalt for text on pearl (6.3:1)           */
+  --accent-surface:#E6ECFF; /* cobalt wash                                */
+
+  --ok:           #1E7A54;  --ok-surface:   #E1F2E9;
+  --warn:         #8F5A14;  --warn-surface: #F8ECDB;
+  --danger:       #B23A52;  --danger-surface:#F9E6EB;
+
+  --hairline: rgba(21, 25, 34, 0.07);
+  --rim:      rgba(255, 255, 255, 0.62);   /* thin light rim, upper edge  */
+
+  /* ---- corner geometry (nested) ---- */
+  --r-shell: 32px;
+  --r-card:  28px;
+  --r-well:  22px;   /* recessed source wells 22–24 */
+  --r-ctl:   18px;   /* buttons & controls 16–20    */
+  --r-chip:  12px;   /* small chips 10–14           */
+  --r-pill:  999px;
+
+  /* ---- elevation: raised ---- */
+  --sh-raise-lg: 7px 8px 17px rgba(154,168,188,0.25),
+                -7px -7px 17px rgba(255,255,255,0.93);
+  --sh-raise:    5px 6px 14px rgba(154,168,188,0.27),
+                -5px -5px 14px rgba(255,255,255,0.92);
+  --sh-raise-sm: 3px 4px 9px rgba(154,168,188,0.30),
+                -3px -3px 9px rgba(255,255,255,0.90);
+
+  /* ---- elevation: inset ---- */
+  --sh-inset:     inset 4px 4px 9px rgba(154,168,188,0.34),
+                  inset -4px -4px 9px rgba(255,255,255,0.90);
+  --sh-inset-sm:  inset 3px 3px 7px rgba(154,168,188,0.30),
+                  inset -3px -3px 7px rgba(255,255,255,0.88);
+  --sh-inset-deep:inset 6px 7px 14px rgba(154,168,188,0.34),
+                  inset -5px -5px 12px rgba(255,255,255,0.86);
+
+  /* ---- surface curvature gradients ---- */
+  --curve-raise: linear-gradient(145deg, #F9FBFD 0%, #F2F5F9 46%, #EDF1F7 100%);
+  --curve-raise-sm: linear-gradient(145deg, #FAFCFE 0%, #F2F5F9 55%, #EEF2F8 100%);
+  --curve-recess: linear-gradient(145deg, #E4EAF1 0%, #E8EDF3 48%, #EDF1F6 100%);
+  --curve-accent: linear-gradient(145deg, #4A6BD8 0%, #3559CB 52%, #2E4FB6 100%);
+
+  /* ---- type ---- */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+               "Segoe UI", system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+               "Liberation Mono", monospace;
+
+  --t-display: clamp(36px, 3.4vw, 44px);
+  --t-h2: 22px;
+  --t-h3: 17px;
+  --t-body: 16px;
+  --t-small: 14px;
+  --t-label: 13px;
+  --t-meta: 12px;   /* nothing below 11px */
+  --t-meta-sm: 11px;
+
+  /* ---- motion ---- */
+  --ease-press: cubic-bezier(0.32, 0.72, 0.28, 1);
+  --dur-press: 140ms;
+  --dur-state: 260ms;
+
+  /* ---- layout ---- */
+  --shell-w: 1240px;
+  --gutter: clamp(20px, 3.6vw, 48px);
+  --header-h: 76px;
+}
+
+/* Flatness safety: with shadows disabled (high contrast / print),
+   surfaces keep a 1px tonal step so convex/concave stay legible.   */
+@media (forced-colors: active) {
+  :root { --sh-raise-lg: none; --sh-raise: none; --sh-raise-sm: none;
+          --sh-inset: none; --sh-inset-sm: none; --sh-inset-deep: none; }
+}

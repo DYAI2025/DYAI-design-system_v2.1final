@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Destill — Foundations &amp; Material Board</title>
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/components.css">
+<style>
+  body { background: var(--pearl); margin: 0; font: 400 var(--t-body)/1.6 var(--font-sans); color: var(--ink); }
+  .fb { width: min(1240px, 100%); margin: 0 auto; padding: 56px var(--gutter) 96px; }
+  h1 { font: 650 clamp(34px, 3.4vw, 44px)/1.1 var(--font-sans); letter-spacing: -0.028em; margin: 14px 0 10px; }
+  h2 { font: 650 var(--t-h2)/1.2 var(--font-sans); letter-spacing: -0.02em; margin: 64px 0 8px; }
+  .lede { color: var(--ink-2); max-width: 62ch; }
+  .board { display: grid; gap: 22px; margin-top: 26px; }
+  .row3 { grid-template-columns: repeat(3, 1fr); }
+  .row4 { grid-template-columns: repeat(4, 1fr); }
+  .row2 { grid-template-columns: 1fr 1fr; }
+  .plate { padding: 26px; border-radius: var(--r-card); }
+  .plate h3 { margin: 0 0 4px; font: 600 16px/1.3 var(--font-sans); }
+  .plate .cap { margin: 0; color: var(--ink-2); font-size: 13px; }
+  .study { height: 168px; border-radius: var(--r-well); margin-top: 18px; display: grid; place-items: center; color: var(--ink-2); font: 600 12px var(--font-mono); letter-spacing: .06em; }
+  .study--raise { background: var(--curve-raise); box-shadow: var(--sh-raise), inset 0 1px 0 var(--rim); }
+  .study--recess { background: var(--curve-recess); box-shadow: var(--sh-inset); }
+  .study--pressed { background: var(--curve-recess); box-shadow: var(--sh-inset-sm); }
+  .study--flat { background: var(--raised); border: 1px solid var(--hairline); }
+  .swatch { border-radius: 18px; padding: 0; overflow: hidden; background: var(--curve-raise-sm); box-shadow: var(--sh-raise-sm), inset 0 1px 0 var(--rim); }
+  .swatch .c { height: 84px; }
+  .swatch .m { padding: 12px 14px; }
+  .swatch .m strong { display: block; font: 600 13px/1.4 var(--font-sans); }
+  .swatch .m span { font: 500 11px/1.5 var(--font-mono); color: var(--ink-3); letter-spacing: .03em; }
+  .spec-table { width: 100%; border-collapse: collapse; font: 500 12.5px/1.5 var(--font-mono); color: var(--ink-2); }
+  .spec-table td, .spec-table th { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  .spec-table th { color: var(--ink); font-weight: 600; }
+  .cell { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; padding: 8px 0; }
+  .type-sample { display: grid; gap: 18px; margin-top: 18px; }
+  .type-row { display: grid; grid-template-columns: 220px 1fr; gap: 18px; align-items: baseline; }
+  .type-row .lbl { font: 500 11px var(--font-mono); letter-spacing: .06em; color: var(--ink-3); }
+  .nest { display: grid; place-items: center; padding: 10px; }
+  .nest > div { display: grid; place-items: center; text-align: center; }
+  .n1 { width: 100%; padding: 26px; border-radius: var(--r-shell); background: var(--curve-raise); box-shadow: var(--sh-raise), inset 0 1px 0 var(--rim); }
+  .n2 { width: 100%; padding: 22px; border-radius: var(--r-card); background: var(--raised); box-shadow: inset 0 0 0 1px var(--hairline); }
+  .n3 { width: 100%; padding: 20px; border-radius: var(--r-well); background: var(--curve-recess); box-shadow: var(--sh-inset-sm); }
+  .n4 { padding: 12px 18px; border-radius: var(--r-ctl); background: var(--curve-raise-sm); box-shadow: var(--sh-raise-sm); font: 600 13px var(--font-sans); }
+  .nmeta { font: 500 11px var(--font-mono); color: var(--ink-3); letter-spacing: .05em; margin-top: 8px; }
+  .sim-hover.btn { color: var(--accent-ink); }
+  .sim-active.btn { background: var(--curve-recess); box-shadow: var(--sh-inset-sm); transform: translateY(1px); }
+  .sim-active.btn--primary { background: #2E4FB6; filter: none; color: #fff; box-shadow: inset 4px 4px 9px rgba(19,31,84,.38), inset -3px -3px 7px rgba(255,255,255,.22); }
+  .sim-disabled.btn { color: var(--ink-faint); background: var(--raised); box-shadow: 2px 3px 6px rgba(154,168,188,.18), -2px -2px 6px rgba(255,255,255,.75); }
+  .sim-focus.btn { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .sim-hover.medallion { color: var(--accent-ink); }
+  .sim-active.medallion { background: var(--curve-recess); box-shadow: var(--sh-inset-sm); }
+  code { font: 500 12px/1.6 var(--font-mono); background: var(--recessed); border-radius: 6px; padding: 2px 6px; color: var(--ink-2); }
+  .note { font-size: 13px; color: var(--ink-2); max-width: 70ch; }
+  @media (max-width: 900px) { .row3, .row4 { grid-template-columns: 1fr 1fr; } .type-row { grid-template-columns: 1fr; gap: 4px; } }
+  @media (max-width: 560px) { .row3, .row4, .row2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="fb">
+  <p class="meta meta--accent">DESTILL · FOUNDATIONS &amp; MATERIAL BOARD</p>
+  <h1>Sculpted light, one source, upper-left.</h1>
+  <p class="lede">Every surface below is drawn by the same tokens the application uses. Raised objects crest at the upper-left and seat a soft contact shadow to the lower-right; recesses shade the upper-left inner wall and lighten the lower-right; pressed controls collapse into a shallow inset. This board is the Figma-substitute artifact: the machine-readable variables live in <code>tokens/destill.tokens.json</code>, the build recipe in <code>docs/figma-blueprint.md</code>.</p>
+
+  <h2>1 · Colour foundation</h2>
+  <div class="board row4">
+    <div class="swatch"><div class="c" style="background:#EEF1F6"></div><div class="m"><strong>Pearl — flat ground</strong><span>#EEF1F6</span></div></div>
+    <div class="swatch"><div class="c" style="background:#F8FAFC"></div><div class="m"><strong>Highlight porcelain</strong><span>#F8FAFC</span></div></div>
+    <div class="swatch"><div class="c" style="background:#F2F5F9"></div><div class="m"><strong>Raised surface</strong><span>#F2F5F9</span></div></div>
+    <div class="swatch"><div class="c" style="background:#E8EDF3"></div><div class="m"><strong>Recessed surface</strong><span>#E8EDF3</span></div></div>
+    <div class="swatch"><div class="c" style="background:#151922"></div><div class="m"><strong>Main ink · 15.4:1 on pearl</strong><span>#151922</span></div></div>
+    <div class="swatch"><div class="c" style="background:#4D5566"></div><div class="m"><strong>Secondary ink · 7.3:1</strong><span>#4D5566</span></div></div>
+    <div class="swatch"><div class="c" style="background:#5B6478"></div><div class="m"><strong>Muted ink · 4.5:1 floor</strong><span>#5B6478</span></div></div>
+    <div class="swatch"><div class="c" style="background:#3559CB"></div><div class="m"><strong>Muted cobalt · semantic</strong><span>#3559CB</span></div></div>
+  </div>
+
+  <h2>2 · Material study — convex, concave, pressed, flat</h2>
+  <div class="board row4">
+    <div class="plate d-card"><h3>Raised</h3><p class="cap">Light crest upper-left; diffuse seat lower-right; 1px rim gleam on the top edge.</p><div class="study study--raise">RAISED</div></div>
+    <div class="plate d-card"><h3>Recessed</h3><p class="cap">Upper-left inner wall in shadow; lower-right inner wall lit; calm centre.</p><div class="study study--recess">RECESSED</div></div>
+    <div class="plate d-card"><h3>Pressed</h3><p class="cap">A raised control after contact: shallow inset, no travel exaggeration.</p><div class="study study--pressed">PRESSED</div></div>
+    <div class="plate d-card"><h3>Flat (shadows off)</h3><p class="cap">With every shadow removed the surfaces keep a tonal step and stay legible.</p><div class="study study--flat">FLAT</div></div>
+  </div>
+
+  <h2>3 · Nested corner geometry</h2>
+  <div class="board row2">
+    <div class="plate d-card nest"><div class="n1"><span class="nmeta">SHELL 32</span><div class="n2"><span class="nmeta">CARD 28</span><div class="n3"><span class="nmeta">WELL 22</span><div class="n4">CTL 18 · CHIP 12</div></div></div></div></div>
+    <div class="plate d-card"><h3>Rule</h3><p class="cap">Inner curvature reads as a parallel offset of the outer: child radius ≈ outer radius − inset distance. Pills stay fully round. At 200% zoom the inner-shadow boundaries of each step remain concentric with its outline.</p>
+      <table class="spec-table"><tr><th>Shell</th><td>32px</td></tr><tr><th>Primary card</th><td>28px</td></tr><tr><th>Recessed well</th><td>22–24px</td></tr><tr><th>Buttons / controls</th><td>16–20px</td></tr><tr><th>Chips</th><td>10–14px</td></tr><tr><th>Pills / medallions</th><td>full round</td></tr></table></div>
+  </div>
+
+  <h2>4 · Elevation specification (exact)</h2>
+  <div class="plate d-card">
+    <table class="spec-table">
+      <tr><th>Raised lg</th><td>7px 8px 17px rgba(154,168,188,.25) · −7px −7px 17px rgba(255,255,255,.93) · + inset 0 1px 0 rgba(255,255,255,.62)</td></tr>
+      <tr><th>Raised</th><td>5px 6px 14px rgba(154,168,188,.27) · −5px −5px 14px rgba(255,255,255,.92)</td></tr>
+      <tr><th>Raised sm</th><td>3px 4px 9px rgba(154,168,188,.30) · −3px −3px 9px rgba(255,255,255,.90)</td></tr>
+      <tr><th>Inset</th><td>inset 4px 4px 9px rgba(154,168,188,.34) · inset −4px −4px 9px rgba(255,255,255,.90)</td></tr>
+      <tr><th>Inset sm</th><td>inset 3px 3px 7px rgba(154,168,188,.30) · inset −3px −3px 7px rgba(255,255,255,.88)</td></tr>
+      <tr><th>Inset deep</th><td>inset 6px 7px 14px rgba(154,168,188,.34) · inset −5px −5px 12px rgba(255,255,255,.86)</td></tr>
+      <tr><th>Primary accent</th><td>5px 6px 14px rgba(53,89,203,.30) · −5px −5px 14px rgba(255,255,255,.92) · inset 0 1px 0 rgba(255,255,255,.32)</td></tr>
+      <tr><th>Thumb</th><td>2px 3px 6px rgba(154,168,188,.42) · −2px −2px 5px rgba(255,255,255,.9) · 0 0 0 5px rgba(53,89,203,.14) halo</td></tr>
+    </table>
+  </div>
+
+  <h2>5 · Typography</h2>
+  <div class="plate d-card"><div class="type-sample">
+    <div class="type-row"><span class="lbl">DISPLAY 36–44 / 1.08 / −2.8%</span><span style="font:650 clamp(36px,3.4vw,44px)/1.08 var(--font-sans);letter-spacing:-.028em">Understand the footage.</span></div>
+    <div class="type-row"><span class="lbl">SECTION 22 / −2%</span><span style="font:650 22px/1.2 var(--font-sans);letter-spacing:-.02em">Story structure</span></div>
+    <div class="type-row"><span class="lbl">BODY 16 / 1.6</span><span style="font:400 16px/1.6 var(--font-sans)">Destill reads a video on this device and shows what it found as time-linked evidence.</span></div>
+    <div class="type-row"><span class="lbl">LABEL 13</span><span style="font:600 13px/1.4 var(--font-sans)">Keep only the strong claims</span></div>
+    <div class="type-row"><span class="lbl">META 12 MONO UPPER</span><span class="meta">SYNTHETIC SOURCE · 04:12 · TABULAR 00:14</span></div>
+  </div>
+  <p class="note">System SF Pro where present; neutral system fallback elsewhere. Timestamps use <code>font-variant-numeric: tabular-nums</code>. Nothing is set below 11px.</p></div>
+
+  <h2>6 · Component states</h2>
+  <div class="board row2">
+    <div class="plate d-card"><h3>Primary action</h3><p class="cap">Idle · hover · pressed · disabled · focus</p>
+      <div class="cell">
+        <button class="btn btn--primary">Analyze</button>
+        <button class="btn btn--primary sim-hover">Analyze</button>
+        <button class="btn btn--primary sim-active">Analyze</button>
+        <button class="btn btn--primary" disabled>Analyze</button>
+        <button class="btn btn--primary sim-focus">Analyze</button>
+      </div>
+      <h3>Secondary button</h3>
+      <div class="cell">
+        <button class="btn">Start over</button>
+        <button class="btn sim-hover">Start over</button>
+        <button class="btn sim-active">Start over</button>
+        <button class="btn" disabled>Start over</button>
+      </div>
+      <h3>Medallions</h3>
+      <div class="cell">
+        <button class="medallion"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8.5 5.8v12.4l10-6.2Z"/></svg></button>
+        <button class="medallion sim-hover"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8.5 5.8v12.4l10-6.2Z"/></svg></button>
+        <button class="medallion sim-active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M8.5 5.8v12.4l10-6.2Z"/></svg></button>
+        <span class="medallion medallion--tone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 3.5c3.6 4.3 6 7.4 6 10.4a6 6 0 0 1-12 0c0-3 2.4-6.1 6-10.4Z"/></svg></span>
+        <span class="medallion medallion--warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 21 19H3Z"/><path d="M12 10v4.2M12 16.8v.2"/></svg></span>
+        <span class="medallion medallion--ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5.5 12.5 4.2 4.2L18.5 8"/></svg></span>
+      </div>
+    </div>
+    <div class="plate d-card"><h3>Segmented control (recessed track, raised active)</h3>
+      <div class="cell">
+        <div class="seg" role="radiogroup" aria-label="demo"><button role="radio" aria-checked="true">KEEP</button><button role="radio" aria-checked="false">CHANGE</button><button role="radio" aria-checked="false">DROP</button></div>
+        <div class="seg seg--decide" role="radiogroup" aria-label="demo2"><button role="radio" data-v="keep" aria-checked="true">KEEP</button><button role="radio" data-v="change" aria-checked="false">CHANGE</button><button role="radio" data-v="drop" aria-checked="false">DROP</button></div>
+      </div>
+      <h3>Text input (recessed)</h3>
+      <div class="cell"><input class="input" style="max-width:340px" placeholder="Keep only the strong claims" aria-label="demo intent"></div>
+      <h3>Source-time chips</h3>
+      <div class="cell">
+        <button class="chip"><span class="dot"></span>00:14</button>
+        <button class="chip"><span class="dot"></span>02:12</button>
+        <span class="chip" disabled>03:44</span>
+      </div>
+      <h3>Processing stage</h3>
+      <div class="cell" style="display:block">
+        <div class="proc-stage is-done"><span class="p-dot">✓</span>Ingest — read local metadata</div>
+        <div class="proc-stage is-now"><span class="p-dot">2</span>Listen — sketch what is said</div>
+        <div class="proc-stage"><span class="p-dot">3</span>Structure — group claim, evidence, aside</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>7 · Notices &amp; truth labelling</h2>
+  <div class="board" style="grid-template-columns:1fr">
+    <div class="notice"><span class="medallion medallion--lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="10.5" width="12" height="9" rx="2.5"/><path d="M9 10.5V8a3 3 0 0 1 6 0v2.5"/></svg></span><div><h3>Blocked, truthfully</h3><p>When a production capability is missing the surface says so plainly and offers the nearest real action.</p></div></div>
+    <div class="notice notice--warn"><span class="medallion medallion--warn medallion--lg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5 21 19H3Z"/><path d="M12 10v4.2M12 16.8v.2"/></svg></span><div><h3>Synthetic, labelled</h3><p>Demonstration data always travels inside a warn-toned band: SYNTHETIC — no model ran, no customer evidence is implied.</p></div></div>
+  </div>
+
+  <h2>8 · Focus, motion, flatness</h2>
+  <div class="plate d-card">
+    <p class="note">Focus is a 2px cobalt outline at 3px offset on every interactive element, visible on pearl and inside recesses. <code>prefers-reduced-motion</code> collapses all transitions and the processing pulse; progress is still communicated by width and stage ticks. Under forced-colors and with shadows disabled, tonal steps (porcelain → raised → recessed) keep convex/concave distinguishable without any shadow — the flatness test.</p>
+  </div>
+</div>
+</body>
+</html>

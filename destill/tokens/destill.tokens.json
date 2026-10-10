@@ -1,0 +1,90 @@
+{
+  "$name": "Destill — Sculpted Light",
+  "$description": "Design proposal tokens. Import via Tokens Studio or the Figma variables REST schema. Shadow values are the calibrated starting points; see docs/shots for the renders they produced.",
+  "color": {
+    "pearl":        { "$type": "color", "$value": "#EEF1F6", "$description": "Flat page ground; supporting plane." },
+    "porcelain":    { "$type": "color", "$value": "#F8FAFC", "$description": "Highlight porcelain; crests and rims." },
+    "raised":       { "$type": "color", "$value": "#F2F5F9", "$description": "Main raised surface." },
+    "recessed":     { "$type": "color", "$value": "#E8EDF3", "$description": "Recessed surface." },
+    "recessed2":    { "$type": "color", "$value": "#E2E8F0", "$description": "Deepest recess: tracks, wells at rest." },
+    "ink":          { "$type": "color", "$value": "#151922", "$description": "Primary ink. 15.5:1 on pearl." },
+    "ink2":         { "$type": "color", "$value": "#4D5566", "$description": "Secondary ink. 6.6:1 on pearl." },
+    "ink3":         { "$type": "color", "$value": "#5B6478", "$description": "Muted ink for 12px mono metadata. 5.2:1 on pearl, 5.0:1 in wells." },
+    "inkFaint":     { "$type": "color", "$value": "#7A8398", "$description": "Placeholders and decorative marks only; never body text." },
+    "accent":       { "$type": "color", "$value": "#3559CB", "$description": "Muted cobalt; primary action and focus." },
+    "accentInk":    { "$type": "color", "$value": "#2A47A8", "$description": "Cobalt for text on pearl/raised. 7.2:1." },
+    "accentSurface":{ "$type": "color", "$value": "#E6ECFF", "$description": "Cobalt wash for medallions and chips." },
+    "ok":           { "$type": "color", "$value": "#1E7A54", "$description": "Semantic success / KEEP." },
+    "okSurface":    { "$type": "color", "$value": "#E1F2E9", "$description": "Success wash." },
+    "warn":         { "$type": "color", "$value": "#8F5A14", "$description": "Semantic warning / CHANGE / synthetic bands." },
+    "warnSurface":  { "$type": "color", "$value": "#F8ECDB", "$description": "Warning wash." },
+    "danger":       { "$type": "color", "$value": "#B23A52", "$description": "Semantic danger / DROP / errors." },
+    "dangerSurface":{ "$type": "color", "$value": "#F9E6EB", "$description": "Danger wash." }
+  },
+  "rim": { "$type": "color", "$value": "rgba(255,255,255,0.62)", "$description": "Thin light rim traced on upper edges of raised objects." },
+  "radius": {
+    "shell": { "$type": "dimension", "$value": "32px" },
+    "card":  { "$type": "dimension", "$value": "28px" },
+    "well":  { "$type": "dimension", "$value": "22px" },
+    "control": { "$type": "dimension", "$value": "18px" },
+    "chip":  { "$type": "dimension", "$value": "12px" },
+    "pill":  { "$type": "dimension", "$value": "999px" }
+  },
+  "shadow": {
+    "raiseLg": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.25)", "offsetX": 7,  "offsetY": 8,  "blur": 17, "spread": 0 },
+      { "color": "rgba(255,255,255,0.93)", "offsetX": -7, "offsetY": -7, "blur": 17, "spread": 0 },
+      { "color": "rgba(255,255,255,0.62)", "offsetX": 0,  "offsetY": 1,  "blur": 0,  "spread": 0, "inset": true }
+    ]},
+    "raise": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.27)", "offsetX": 5,  "offsetY": 6,  "blur": 14, "spread": 0 },
+      { "color": "rgba(255,255,255,0.92)", "offsetX": -5, "offsetY": -5, "blur": 14, "spread": 0 },
+      { "color": "rgba(255,255,255,0.62)", "offsetX": 0,  "offsetY": 1,  "blur": 0,  "spread": 0, "inset": true }
+    ]},
+    "raiseSm": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.30)", "offsetX": 3,  "offsetY": 4,  "blur": 9, "spread": 0 },
+      { "color": "rgba(255,255,255,0.90)", "offsetX": -3, "offsetY": -3, "blur": 9, "spread": 0 },
+      { "color": "rgba(255,255,255,0.62)", "offsetX": 0,  "offsetY": 1,  "blur": 0, "spread": 0, "inset": true }
+    ]},
+    "inset": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.34)", "offsetX": 4,  "offsetY": 4,  "blur": 9, "spread": 0, "inset": true },
+      { "color": "rgba(255,255,255,0.90)", "offsetX": -4, "offsetY": -4, "blur": 9, "spread": 0, "inset": true }
+    ]},
+    "insetSm": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.30)", "offsetX": 3,  "offsetY": 3,  "blur": 7, "spread": 0, "inset": true },
+      { "color": "rgba(255,255,255,0.88)", "offsetX": -3, "offsetY": -3, "blur": 7, "spread": 0, "inset": true }
+    ]},
+    "insetDeep": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.34)", "offsetX": 6,  "offsetY": 7,  "blur": 14, "spread": 0, "inset": true },
+      { "color": "rgba(255,255,255,0.86)", "offsetX": -5, "offsetY": -5, "blur": 12, "spread": 0, "inset": true }
+    ]},
+    "primary": { "$type": "shadow", "$value": [
+      { "color": "rgba(53,89,203,0.30)",   "offsetX": 5,  "offsetY": 6,  "blur": 14, "spread": 0 },
+      { "color": "rgba(255,255,255,0.92)", "offsetX": -5, "offsetY": -5, "blur": 14, "spread": 0 },
+      { "color": "rgba(255,255,255,0.32)", "offsetX": 0,  "offsetY": 1,  "blur": 0,  "spread": 0, "inset": true }
+    ]},
+    "thumb": { "$type": "shadow", "$value": [
+      { "color": "rgba(154,168,188,0.42)", "offsetX": 2,  "offsetY": 3,  "blur": 6, "spread": 0 },
+      { "color": "rgba(255,255,255,0.90)", "offsetX": -2, "offsetY": -2, "blur": 5, "spread": 0 },
+      { "color": "rgba(53,89,203,0.14)",   "offsetX": 0,  "offsetY": 0,  "blur": 0, "spread": 5 }
+    ]}
+  },
+  "gradient": {
+    "curveRaise":  { "$type": "string", "$value": "linear-gradient(145deg, #F9FBFD 0%, #F2F5F9 46%, #EDF1F7 100%)" },
+    "curveRaiseSm":{ "$type": "string", "$value": "linear-gradient(145deg, #FAFCFE 0%, #F2F5F9 55%, #EEF2F8 100%)" },
+    "curveRecess": { "$type": "string", "$value": "linear-gradient(145deg, #E4EAF1 0%, #E8EDF3 48%, #EDF1F6 100%)" },
+    "curveAccent": { "$type": "string", "$value": "linear-gradient(145deg, #4A6BD8 0%, #3559CB 52%, #2E4FB6 100%)" }
+  },
+  "typography": {
+    "display": { "$type": "typography", "$value": { "fontFamily": "-apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif", "fontSize": "clamp(36px, 3.4vw, 44px)", "lineHeight": 1.08, "letterSpacing": "-0.028em", "fontWeight": 650 } },
+    "section": { "$type": "typography", "$value": { "fontSize": "22px", "lineHeight": 1.2, "letterSpacing": "-0.02em", "fontWeight": 650 } },
+    "body":    { "$type": "typography", "$value": { "fontSize": "16px", "lineHeight": 1.6, "fontWeight": 400 } },
+    "label":   { "$type": "typography", "$value": { "fontSize": "13px", "lineHeight": 1.4, "fontWeight": 600 } },
+    "meta":    { "$type": "typography", "$value": { "fontFamily": "ui-monospace, 'SF Mono', Menlo, monospace", "fontSize": "12px", "lineHeight": 1.4, "letterSpacing": "0.08em", "fontWeight": 600, "textCase": "uppercase" } },
+    "metaSm":  { "$type": "typography", "$value": { "fontFamily": "ui-monospace, 'SF Mono', Menlo, monospace", "fontSize": "11px", "lineHeight": 1.4, "letterSpacing": "0.07em", "fontWeight": 600, "textCase": "uppercase" } }
+  },
+  "motion": {
+    "press": { "$type": "string", "$value": "140ms cubic-bezier(0.32, 0.72, 0.28, 1)" },
+    "state": { "$type": "string", "$value": "260ms cubic-bezier(0.32, 0.72, 0.28, 1)" }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "destill-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Destill — Sculpted Light. Locally runnable design proposal prototype and its QA harness.",
+  "scripts": {
+    "shots": "node qa/shot.mjs",
+    "axe": "node qa/axe.mjs",
+    "test": "node --test qa/logic.test.mjs",
+    "tokens": "node qa/tokens-check.mjs",
+    "contrast": "node qa/contrast.mjs",
+    "e2e": "node qa/e2e.mjs",
+    "flat": "node qa/flat.mjs"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^23.0.0",
+    "axe-core": "^4.10.0"
+  },
+  "qa": {
+    "note": "QA scripts need a Chromium binary: set CHROME_PATH to one. In the original QA run, Chromium 153 was obtained from the npm package @sparticuz/chromium (registry.npmjs.org only), extracted to a scratch dir outside the repo. LD_LIBRARY_PATH and FONTCONFIG_PATH must include its lib/swiftshader/fonts dirs (see qa/README.md)."
+  }
+}
