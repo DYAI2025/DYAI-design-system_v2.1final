@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Destill — a local-first AI video-editing companion. Design proposal: sculpted light material system.">
+  <title>Destill — Sculpted Light</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 3.5c3.6 4.3 6 7.4 6 10.4a6 6 0 0 1-12 0c0-3 2.4-6.1 6-10.4Z' fill='%233559CB'/%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="shell-head">
+    <div class="shell-head-in">
+      <div class="brand">
+        <span class="medallion medallion--tone" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5c3.6 4.3 6 7.4 6 10.4a6 6 0 0 1-12 0c0-3 2.4-6.1 6-10.4Z"/></svg>
+        </span>
+        <div>
+          <div class="wordmark">Destill</div>
+          <div class="meta tag">SCULPTED LIGHT · LOCAL-FIRST</div>
+        </div>
+      </div>
+      <span class="mode-chip" id="mode-chip"><span class="dot"></span>NO SOURCE</span>
+      <a class="medallion" href="spec/foundations.html" title="Material foundations board" aria-label="Material foundations board">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5M12 8v.2"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <main class="shell-main">
+    <div id="stage"></div>
+    <div id="rail"></div>
+  </main>
+
+  <footer class="shell-foot">
+    <div class="shell-foot-in">
+      <span class="meta">DESIGN PROPOSAL — PRODUCT OWNER REVIEW REQUIRED</span>
+      <span class="meta">DESTILL · SCULPTED LIGHT · NO FOOTAGE LEAVES THIS DEVICE</span>
+    </div>
+  </footer>
+
+  <div id="live" class="sr-only" role="status" aria-live="polite"></div>
+
+  <script src="js/logic.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
